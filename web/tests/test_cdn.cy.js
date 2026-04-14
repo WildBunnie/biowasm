@@ -1,6 +1,10 @@
 const EXAMPLE_SAM = `@SQ	SN:ref	LN:45\n@SQ	SN:ref2	LN:40\nr001	163	ref	7	30	8M4I4M1D3M	=	37	39	TTAGATAAAGAGGATACTG	*	XX:B:S,12561,2,20,112\nr002	0	ref	9	30	1S2I6M1P1I1P1I4M2I	*	0	0	AAAAGATAAGGGATAAA	*\nr003	0	ref	9	30	5H6M	*	0	0	AGCTAA	*\nr004	0	ref	16	30	6M14N1I5M	*	0	0	ATAGCTCTCAGC	*\nr003	16	ref	29	30	6H5M	*	0	0	TAGGC	*\nr001	83	ref	37	30	9M	=	7	-39	CAGCGCCAT	*\nx1	0	ref2	1	30	20M	*	0	0	aggttttataaaacaaataa	????????????????????\nx2	0	ref2	2	30	21M	*	0	0	ggttttataaaacaaataatt	?????????????????????\nx3	0	ref2	6	30	9M4I13M	*	0	0	ttataaaacAAATaattaagtctaca	??????????????????????????\nx4	0	ref2	10	30	25M	*	0	0	CaaaTaattaagtctacagagcaac	?????????????????????????\nx5	0	ref2	12	30	24M	*	0	0	aaTaattaagtctacagagcaact	????????????????????????\nx6	0	ref2	14	30	23M	*	0	0	Taattaagtctacagagcaacta	???????????????????????`;
 const EXPECTED_OUTPUTS = {
 	// Test tool-specific code examples
+	"tools/ASTER/examples/v1.23.html": [
+		`((((((species_3:0.384764,species_5:0.41033)0.347404:0.0185152,species_2:0.434315)0.638861:0.158784,(species_4:0.543189,species_6:0.215166)0.208691:0.0938071)0.421447:0.0295233,(species_1:0.243034,species_7:0.304125)0.310432:0.0125931)0.878764:0.0989329,(species_9:0.0755924,(species_10:0.263574,species_8:0.404815)0.265135:0.0134899)0.771255:0.741675):0.10164,species_0:0.10164);`,
+		`((3,((24,(((9,15)61.9:0.205371,14)61.9:0.0220792,5)61.9:0.0765202)61.9:0,(11,(((10,23)61.9:0,6)61.9:0.1272,((22,25)61.9:0.198788,((1,(18,(((((19,21)61.9:0,20)61.9:0.248507,2)61.9:0,17)61.9:0.0889822,(((13,12)61.9:0,7)61.9:0,4)61.9:0.0575676)0:0)61.9:0.0236743)61.9:0.0530922,(8,16)61.9:0.125792)61.9:0.0119149)61.9:0)61.9:0.0406863)61.9:0.00315117)61.9:0.00644764),0);`
+	],
 	"tools/bcftools/examples/1.10.html": [`1:3106154	CAAA	C\n1:3157410	GA	G\n1:3162006	GAA	G\n1:3184885	TAAAA	TA,T\n2:3199812	G	GTT,GT\n3:3212016	CTT	C,CT`],
 	"tools/bedtools/examples/v2.29.2.html": [`chr1	100	101	a2	2	-\nchr1	100	110	a2	2	-`],
 	"tools/bedtools/examples/v2.31.0.html": [`chr1	100	101	a2	2	-\nchr1	100	110	a2	2	-`, `chr1	1000	4	599	0.333333333	1.000000000	1.000000000	50	350	149.750000000`],
@@ -13,6 +17,7 @@ const EXPECTED_OUTPUTS = {
 		`\t"summary": {\n\t\t"before_filtering": {\n\t\t\t"total_reads":50,\n\t\t\t"total_bases":7400,\n\t\t\t"q20_bases":7308,\n\t\t\t"q30_bases":7169,\n\t\t\t"q20_rate":0.987568,\n\t\t\t"q30_rate":0.968784,\n\t\t\t"read1_mean_length":148,\n\t\t\t"gc_content":0.409459\n\t\t},\n\t\t"after_filtering": {\n\t\t\t"total_reads":50,\n\t\t\t"total_bases":7400,\n\t\t\t"q20_bases":7308,\n\t\t\t"q30_bases":7169,\n\t\t\t"q20_rate":0.987568,\n\t\t\t"q30_rate":0.968784,\n\t\t\t"read1_mean_length":148,\n\t\t\t"gc_content":0.409459\n\t\t}\n\t}`
 	],
 	"tools/fasttree/examples/main.html": [`(1k99_A:1.455604057,2lef_A:0.867678506,(1aab_:2.021714810,1j46_A:0.342407321)0.877:0.650876783);`],
+	"tools/lastz/examples/v1.04.52.html": [`#name1\tstart1\tend1\tname2\tstart2\tend2\tstrand2\tscore\ncat\t4929\t5024\tpig2\t17498\t17593\t+\t3348\ncat\t183\t312\tpig2\t4038\t4167\t-\t3850\ncat\t13977\t14124\tpig2\t7670\t7817\t-\t4685\ncat\t15217\t15331\tpig2\t8900\t9014\t-\t3800\ncat\t15958\t16096\tpig2\t9637\t9775\t-\t4325\ncat\t17500\t17595\tpig2\t11107\t11202\t-\t4046\ncat\t8412\t8539\tpig2\t16242\t16369\t-\t3909\ncat\t11219\t11394\tpig2\t20194\t20369\t-\t4800`],
 	"tools/mummer4/examples/v4.0.0rc1.html": [`>B_anthracis_Mslice 137795 312600 863`],
 	"tools/muscle/examples/5.1.0.html": [`>2lef_\nA-------MHIKKPLNAFMLYMKEMRANVVAESTL--KESAAINQILGRRWHALSREEQAKYYELARKERQLHMQLYPGW\nSARDNYGKKKKRKREK`],
 	"tools/muscle/examples/main.html": [`>2lef_\n-------AMHIKKPLNAFMLYMKEMRANVVAES-TLK-ESAAINQILGRRWHALSREEQA\nKYYELARKERQLHMQLYPGWSARDNYGKKKKRKREK`],
@@ -82,6 +87,10 @@ const EXPECTED_OUTPUTS = {
 		`ID1,ID2,Distance\nB_FR_83_HXB2_ACC_K03455_5,B_US_83_RF_ACC_M17451,0.045156\nB_FR_83_HXB2_ACC_K03455_5,B_US_86_JRFL_ACC_U63632,0.0296218\nB_FR_83_HXB2_ACC_K03455_5,B_US_90_WEAU160_ACC_U21135,0.0327566\nB_US_83_RF_ACC_M17451,B_US_86_JRFL_ACC_U63632,0.048328\nB_US_86_JRFL_ACC_U63632,B_US_90_WEAU160_ACC_U21135,0.0408994\nD_CD_83_ELI_ACC_K03454_7,D_CD_83_NDK_ACC_M27323,0.0287246\nD_CD_83_NDK_ACC_M27323,D_CD_84_84ZR085_ACC_U88822,0.0491974`
 	],
 	"tools/tree/examples/2.0.4.html": ["11 directories, 8 files", "└── web_user", "├── stderr -> /dev/tty1"],
+    "tools/vidjil-algo/examples/release-2025.12.html": [
+		"junction detected in 14 reads (100%)",
+		"found 14 windows in 14 reads (100% of 14 reads)"
+	],
 	"tools/ViralConsensus/examples/0.0.1.html": ["AAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTC"],
 	"tools/ViralConsensus/examples/0.0.2.html": ["AAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTC"],
 	"tools/ViralConsensus/examples/0.0.3.html": ["AAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTC"],

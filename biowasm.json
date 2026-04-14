@@ -26,6 +26,18 @@
 			]
 		},
 		{
+			"name": "ASTER",
+			"programs": ["astral", "astral-pro", "wastral", "caster-site", "caster-pair"],
+			"description": "Accurate Species Tree EstimatoR",
+			"files": ["js", "wasm", "data"],
+			"versions": [
+				{
+					"version": "1.23",
+					"branch": "v1.23"
+				}
+			]
+		},
+		{
 			"name": "base",
 			"programs": ["base"],
 			"listed": false,
@@ -274,6 +286,18 @@
 			]
 		},
 		{
+			"name": "lastz",
+			"programs": ["lastz", "lastz_D"],
+			"description": "Pairwise DNA sequence aligner",
+			"files": ["js", "wasm", "data"],
+			"versions": [
+				{
+					"version": "1.04.52",
+					"branch": "1.04.52"
+				}
+			]
+		},
+		{
 			"name": "libarchive",
 			"programs": ["bsdunzip"],
 			"description": "Unzip .zip files",
@@ -457,6 +481,18 @@
 				{
 					"version": "2.0.4",
 					"branch": "2.0.4"
+				}
+			]
+		},
+		{
+			"name": "vidjil-algo",
+			"programs": ["vidjil-algo"],
+			"description": "High-Throughput Analysis of V(D)J Immune Repertoire",
+			"files": ["js", "wasm", "data"],
+			"versions": [
+				{
+					"version": "2025.12",
+					"branch": "release-2025.12"
 				}
 			]
 		},

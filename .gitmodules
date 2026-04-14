@@ -2,6 +2,10 @@
 	path = tools/aioli/src
 	url = https://github.com/biowasm/aioli.git
 
+[submodule "tools/ASTER/src"]
+	path = tools/ASTER/src
+	url = https://github.com/chaoszhang/ASTER.git
+
 [submodule "tools/bcftools/src"]
 	path = tools/bcftools/src
 	url = https://github.com/samtools/bcftools.git
@@ -74,6 +78,10 @@
 	path = tools/kentutils/src
 	url = https://github.com/ucscGenomeBrowser/kent.git
 
+[submodule "tools/lastz/src"]
+	path = tools/lastz/src
+	url = https://github.com/lastz/lastz.git
+
 [submodule "tools/libarchive/src"]
 	path = tools/libarchive/src
 	url = https://github.com/libarchive/libarchive.git
@@ -129,6 +137,10 @@
 [submodule "tools/tree/src"]
 	path = tools/tree/src
 	url = https://gitlab.com/OldManProgrammer/unix-tree.git
+
+[submodule "tools/vidjil/src"]
+	path = tools/vidjil-algo/src
+	url = https://gitlab.inria.fr/vidjil/vidjil.git
 
 [submodule "tools/ViralConsensus/src"]
 	path = tools/ViralConsensus/src

@@ -18,6 +18,7 @@ LDFLAGS="$LDFLAGS_LZMA"
 make clean
 autoheader
 autoconf
+autoreconf -i
 emconfigure ./configure CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS"
 
 # Build htslib tools

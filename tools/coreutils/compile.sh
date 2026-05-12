@@ -20,11 +20,11 @@ emconfigure ./configure \
 sed -i 's|$(MAKE) src/make-prime-list$(EXEEXT)|gcc src/make-prime-list.c -o src/make-prime-list$(EXEEXT) -Ilib/|' Makefile
 
 # Make all commands and skip "man" errors
-emmake make all CC=emcc -k WERROR_CFLAGS=""
+emmake make all CC=emcc -k WERROR_CFLAGS="" CFLAGS="-Wno-incompatible-function-pointer-types"
 emmake make $UTILS \
   CC=emcc EXEEXT=.js \
-  CFLAGS="-O2 $EM_FLAGS" \
-  -k WERROR_CFLAGS=""
+  CFLAGS="-O2 $EM_FLAGS -Wno-incompatible-function-pointer-types" \
+  -k WERROR_CFLAGS="" \
 
 # Don't throw error for unsupported features
 sed -i 's/throw\("[a-z]*: TODO"\)/console.warn(\1)/g' src/*.js

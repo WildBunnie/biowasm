@@ -19,8 +19,11 @@ make clean
 autoheader
 autoconf
 autoreconf -i
-emconfigure ./configure CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS"
-
+emconfigure ./configure \
+    --host=wasm32-unknown-emscripten \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS"
+    
 # Build htslib tools
 TOOLS=("tabix" "htsfile" "bgzip")
 for tool in ${TOOLS[@]}; do

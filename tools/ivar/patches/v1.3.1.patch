@@ -14,14 +14,14 @@ index c4eb867..ed56408 100644
      AC_SUBST([AM_CXXFLAGS])
      AC_SUBST([AM_LDFLAGS])
 diff --git a/src/Makefile.am b/src/Makefile.am
-index 0b55a8d..4a06aa0 100755
+index 0b55a8d..5d789dc 100755
 --- a/src/Makefile.am
 +++ b/src/Makefile.am
 @@ -1,6 +1,6 @@
  LIBS = -lhts -lz -lpthread
  
 -CXXFLAGS = -v -g -std=c++11 -Wall -Wextra -Werror
-+CXXFLAGS = -std=c++11 -Wall -Wextra -Werror
++CXXFLAGS = -std=c++11 -Wall -Wextra
  
  # this lists the binaries to produce, the (non-PHONY, binary) targets in
  # the previous manual Makefile

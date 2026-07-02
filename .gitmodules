@@ -68,7 +68,7 @@
 
 [submodule "tools/jq/src"]
 	path = tools/jq/src
-	url = https://github.com/stedolan/jq.git
+	url = https://github.com/jqlang/jq
 
 [submodule "tools/kalign/src"]
 	path = tools/kalign/src
